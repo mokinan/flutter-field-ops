@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  quality:
+    name: Analyze & test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.44.4'
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      # Before code generation, so generated files are not format-checked.
+      - name: Check formatting
+        run: dart format --output=none --set-exit-if-changed lib test integration_test test_driver
+      - name: Generate code
+        run: |
+          dart run build_runner build --delete-conflicting-outputs
+          flutter gen-l10n
+      - name: Analyze
+        run: flutter analyze --fatal-infos
+      - name: Test
+        run: flutter test --coverage
+      - name: Enforce coverage on business logic
+        run: |
+          # Domain, data and cubits are gated; generated code and widgets are not.
+          python3 - <<'EOF'
+          import sys
+          files, cur = {}, None
+          for line in open('coverage/lcov.info'):
+              if line.startswith('SF:'): cur = line[3:].strip(); files[cur] = [0, 0]
+              elif line.startswith('LF:'): files[cur][0] = int(line[3:])
+              elif line.startswith('LH:'): files[cur][1] = int(line[3:])
+          def is_logic(f):
+              if f.endswith('.g.dart'):
+                  return False
+              return f.startswith(('lib/domain/', 'lib/data/')) or f.endswith('_cubit.dart')
+          logic = {f: v for f, v in files.items() if is_logic(f)}
+          total = sum(v[0] for v in logic.values()); hit = sum(v[1] for v in logic.values())
+          pct = 100 * hit / total
+          print(f'Business logic line coverage: {pct:.1f}% ({hit}/{total})')
+          sys.exit(0 if pct >= 80 else 1)
+          EOF
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage
+          path: coverage/lcov.info
+
+  build-android:
+    name: Build Android
+    needs: quality
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.44.4'
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: dart run build_runner build --delete-conflicting-outputs
+      - run: flutter build apk --debug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: field-ops-debug-apk
+          path: build/app/outputs/flutter-apk/app-debug.apk
