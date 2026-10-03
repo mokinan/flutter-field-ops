@@ -1,0 +1,153 @@
+{
+  "@@locale": "en",
+  "appTitle": "Field Ops",
+  "signInTitle": "Warehouse operations",
+  "signInSubtitle": "Sign in to your company workspace",
+  "company": "Company",
+  "email": "Email",
+  "password": "Password",
+  "signIn": "Sign in",
+  "demoAccounts": "Demo accounts",
+  "roleManager": "Manager",
+  "roleClerk": "Clerk",
+  "roleViewer": "Viewer",
+  "invalidCredentials": "Incorrect email or password",
+  "offlineError": "You're offline",
+  "navInventory": "Inventory",
+  "navCount": "Count",
+  "navApprovals": "Approvals",
+  "navActivity": "Activity",
+  "searchItems": "Search name, SKU or barcode",
+  "scan": "Scan",
+  "itemNotFound": "No item with this barcode in this warehouse",
+  "onHand": "On hand",
+  "pendingUnits": "{delta} pending sync",
+  "serverQuantity": "Server: {qty}",
+  "receive": "Receive",
+  "issue": "Issue",
+  "transfer": "Transfer",
+  "adjustment": "Adjustment",
+  "quantity": "Quantity",
+  "destination": "To warehouse",
+  "note": "Note (optional)",
+  "save": "Save",
+  "cancel": "Cancel",
+  "insufficientStock": "Only {available} available",
+  "invalidQuantity": "Enter a quantity above zero",
+  "movementSaved": "Saved on device · will sync automatically",
+  "recentMovements": "Recent movements",
+  "noMovements": "No movements yet",
+  "selectItem": "Select an item to see details",
+  "readOnly": "Read-only access",
+  "startCount": "Start count",
+  "countHint": "Count every item on the shelf. Scan a barcode to add one unit, or type the total.",
+  "expected": "Expected {qty}",
+  "countProgress": "{counted} of {total} counted · {variances} with variance",
+  "submitCount": "Submit count",
+  "countDone": "Count submitted",
+  "countResult": "{applied} adjusted · {approval} sent for approval",
+  "newCount": "New count",
+  "needsApproval": "Needs manager approval",
+  "approvalsEmpty": "Nothing to approve",
+  "approvalsOffline": "Approvals need a connection",
+  "variance": "Variance {value}",
+  "requestedBy": "Counted by {name}",
+  "approve": "Approve",
+  "reject": "Reject",
+  "retry": "Retry",
+  "allSynced": "All changes synced",
+  "pendingChanges": "{count, plural, =1{1 change waiting to sync} other{{count} changes waiting to sync}}",
+  "offlineMode": "Offline mode",
+  "offlineModeHint": "Simulates no network: changes are kept on the device",
+  "otherDevice": "Simulate another device",
+  "otherDeviceHint": "Another clerk issues stock on the server",
+  "statusPending": "Pending",
+  "statusSynced": "Synced",
+  "statusRejected": "Rejected",
+  "rejectedInsufficient": "Rejected: only {available} left on the server",
+  "rejectedOther": "Rejected by the server",
+  "dismiss": "Dismiss",
+  "signOut": "Sign out",
+  "language": "العربية",
+  "scanTitle": "Scan barcode",
+  "enterManually": "Or enter the barcode",
+  "@pendingChanges": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@pendingUnits": {
+    "placeholders": {
+      "delta": {
+        "type": "int"
+      }
+    }
+  },
+  "@serverQuantity": {
+    "placeholders": {
+      "qty": {
+        "type": "int"
+      }
+    }
+  },
+  "@insufficientStock": {
+    "placeholders": {
+      "available": {
+        "type": "int"
+      }
+    }
+  },
+  "@expected": {
+    "placeholders": {
+      "qty": {
+        "type": "int"
+      }
+    }
+  },
+  "@countProgress": {
+    "placeholders": {
+      "counted": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "variances": {
+        "type": "int"
+      }
+    }
+  },
+  "@countResult": {
+    "placeholders": {
+      "applied": {
+        "type": "int"
+      },
+      "approval": {
+        "type": "int"
+      }
+    }
+  },
+  "@rejectedInsufficient": {
+    "placeholders": {
+      "available": {
+        "type": "int"
+      }
+    }
+  },
+  "@variance": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  }
+}

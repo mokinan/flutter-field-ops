@@ -1,0 +1,153 @@
+{
+  "@@locale": "ar",
+  "appTitle": "العمليات الميدانية",
+  "signInTitle": "عمليات المستودعات",
+  "signInSubtitle": "سجّل الدخول إلى مساحة شركتك",
+  "company": "الشركة",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "signIn": "تسجيل الدخول",
+  "demoAccounts": "حسابات تجريبية",
+  "roleManager": "مدير",
+  "roleClerk": "أمين مستودع",
+  "roleViewer": "مشاهد",
+  "invalidCredentials": "البريد أو كلمة المرور غير صحيحة",
+  "offlineError": "أنت غير متصل",
+  "navInventory": "المخزون",
+  "navCount": "الجرد",
+  "navApprovals": "الموافقات",
+  "navActivity": "النشاط",
+  "searchItems": "ابحث بالاسم أو الرمز أو الباركود",
+  "scan": "مسح",
+  "itemNotFound": "لا يوجد صنف بهذا الباركود في هذا المستودع",
+  "onHand": "المتوفر",
+  "pendingUnits": "{delta} بانتظار المزامنة",
+  "serverQuantity": "الخادم: {qty}",
+  "receive": "استلام",
+  "issue": "صرف",
+  "transfer": "تحويل",
+  "adjustment": "تسوية",
+  "quantity": "الكمية",
+  "destination": "إلى مستودع",
+  "note": "ملاحظة (اختياري)",
+  "save": "حفظ",
+  "cancel": "إلغاء",
+  "insufficientStock": "المتوفر {available} فقط",
+  "invalidQuantity": "أدخل كمية أكبر من صفر",
+  "movementSaved": "حُفظت على الجهاز · ستتم مزامنتها تلقائيًا",
+  "recentMovements": "آخر الحركات",
+  "noMovements": "لا توجد حركات",
+  "selectItem": "اختر صنفًا لعرض التفاصيل",
+  "readOnly": "صلاحية عرض فقط",
+  "startCount": "بدء الجرد",
+  "countHint": "اجرد كل الأصناف على الرف. امسح الباركود لإضافة وحدة، أو اكتب الإجمالي.",
+  "expected": "المتوقع {qty}",
+  "countProgress": "تم جرد {counted} من {total} · {variances} بفروقات",
+  "submitCount": "إرسال الجرد",
+  "countDone": "تم إرسال الجرد",
+  "countResult": "{applied} تمت تسويتها · {approval} أُرسلت للموافقة",
+  "newCount": "جرد جديد",
+  "needsApproval": "يتطلب موافقة المدير",
+  "approvalsEmpty": "لا توجد طلبات",
+  "approvalsOffline": "الموافقات تتطلب اتصالًا",
+  "variance": "الفرق {value}",
+  "requestedBy": "جرد بواسطة {name}",
+  "approve": "موافقة",
+  "reject": "رفض",
+  "retry": "إعادة المحاولة",
+  "allSynced": "تمت مزامنة كل التغييرات",
+  "pendingChanges": "{count, plural, =1{تغيير واحد بانتظار المزامنة} =2{تغييران بانتظار المزامنة} few{{count} تغييرات بانتظار المزامنة} other{{count} تغييرًا بانتظار المزامنة}}",
+  "offlineMode": "وضع عدم الاتصال",
+  "offlineModeHint": "محاكاة انقطاع الشبكة: تُحفظ التغييرات على الجهاز",
+  "otherDevice": "محاكاة جهاز آخر",
+  "otherDeviceHint": "أمين آخر يصرف مخزونًا على الخادم",
+  "statusPending": "قيد الانتظار",
+  "statusSynced": "تمت المزامنة",
+  "statusRejected": "مرفوضة",
+  "rejectedInsufficient": "رُفضت: المتبقي على الخادم {available} فقط",
+  "rejectedOther": "رفضها الخادم",
+  "dismiss": "إخفاء",
+  "signOut": "تسجيل الخروج",
+  "language": "English",
+  "scanTitle": "مسح الباركود",
+  "enterManually": "أو أدخل الباركود",
+  "@pendingChanges": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@pendingUnits": {
+    "placeholders": {
+      "delta": {
+        "type": "int"
+      }
+    }
+  },
+  "@serverQuantity": {
+    "placeholders": {
+      "qty": {
+        "type": "int"
+      }
+    }
+  },
+  "@insufficientStock": {
+    "placeholders": {
+      "available": {
+        "type": "int"
+      }
+    }
+  },
+  "@expected": {
+    "placeholders": {
+      "qty": {
+        "type": "int"
+      }
+    }
+  },
+  "@countProgress": {
+    "placeholders": {
+      "counted": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "variances": {
+        "type": "int"
+      }
+    }
+  },
+  "@countResult": {
+    "placeholders": {
+      "applied": {
+        "type": "int"
+      },
+      "approval": {
+        "type": "int"
+      }
+    }
+  },
+  "@rejectedInsufficient": {
+    "placeholders": {
+      "available": {
+        "type": "int"
+      }
+    }
+  },
+  "@variance": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "@requestedBy": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  }
+}
