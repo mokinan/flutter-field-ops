@@ -1,0 +1,43 @@
+name: field_ops
+description: Offline-first warehouse inventory app for field teams.
+publish_to: none
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  bloc_concurrency: ^0.3.0
+  # drift_dev 2.35 conflicts with the test_api pinned by flutter_test.
+  drift: ">=2.34.0 <2.35.0"
+  drift_flutter: ^0.3.1
+  durable_sync_queue:
+    git:
+      url: https://github.com/mokinan/durable_sync_queue.git
+      ref: main
+  equatable: ^2.1.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.1.1
+  flutter_localizations:
+    sdk: flutter
+  go_router: ^18.0.2
+  intl: ^0.20.2
+  mobile_scanner: ^7.4.2
+  shared_preferences: ^2.5.5
+  uuid: ^4.6.0
+
+dev_dependencies:
+  bloc_test: ^10.0.0
+  build_runner: ^2.15.1
+  drift_dev: ">=2.34.0 <2.35.0"
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  mocktail: ^1.0.5
+  very_good_analysis: ^10.3.0
+
+flutter:
+  uses-material-design: true
+  generate: true

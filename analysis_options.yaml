@@ -1,0 +1,18 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - lib/l10n/gen/**
+
+formatter:
+  page_width: 120
+
+linter:
+  rules:
+    # `BlocProvider(create: (_) => Cubit()..load())` is idiomatic; unawaited
+    # futures inside async code are still caught by `unawaited_futures`.
+    discarded_futures: false
+    # Public API docs matter for packages, not for app code.
+    public_member_api_docs: false
+    lines_longer_than_80_chars: false
